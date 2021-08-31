@@ -1,0 +1,26 @@
+
+
+
+
+.cards {
+    background: green;
+    color: white;
+    /* display: none; */
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    grid-gap: 1rem;
+    justify-items: center;
+}
+
+.card {
+    background: lightgreen;
+    /* justify-self: center; */
+    /* display: none; */
+}
+
+.card-name {
+    font-size: 1.25rem;
+    text-align: center;
+}
+ 
+/* .card-image {} */
