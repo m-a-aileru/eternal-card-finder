@@ -238,3 +238,14 @@ findButton.addEventListener("submit", () => { getData().then(c => displayFoundCa
 // getData().then(c => displayFoundCard(c[0])).catch(e => console.log(e));
 // cardsDisplay.innerHTML = "Whatever 2";
 
+/* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
+function openNav() {
+  document.querySelector(".card-list").style.width = "250px";
+  document.querySelector(".container").style.marginRight = "250px";
+}
+
+/* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
+function closeNav() {
+  document.querySelector(".card-list").style.width = "0";
+  document.querySelector(".container").style.marginRight = "0";
+}
