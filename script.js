@@ -249,3 +249,21 @@ function closeNav() {
   document.querySelector(".card-list").style.width = "0";
   document.querySelector(".container").style.marginRight = "0";
 }
+ 
+//let randomArr = ["Card One", "Card Two", "Card Three", "Card Four", "Card Five"]; - for demo purposes
+
+function generateCardList(cards) {
+  for (let c = 0; c < 100; c++) {
+  // for (c of cards) {
+    console.log(cards[c].Name);
+    // console.log(c);
+    document.querySelector(".card-list").innerHTML += 
+      `<p>${cards[c].Name}</p>`
+    // document.querySelector(".card-list").innerHTML += 
+    //   `<p>${c.Name}</p>`
+  }
+}
+
+
+
+getData().then(data => generateCardList(data))
