@@ -2,8 +2,10 @@ let container = document.querySelector(".container");
 let searchBar = document.querySelector(".search-bar");
 let cardsDisplay = document.querySelector(".cards");
 let findButton = document.querySelector(".find");
+let searchUI = document.querySelector(".search-ui");
 // let cardList = document.querySelector(".card-list");
 // let dropdown = document.querySelector(".dropdown");
+let moveUp = document.querySelector(".move-up");
 
 // let optionArr = ['Opt. 1', 'Opt. 2', 'Opt. 3', 'Opt. 4']
 
@@ -129,6 +131,8 @@ function displayFoundCard(cards) {
 //       </tr>
 //     </table>`;
 // }
+// console.log("It should have moved up by now.");
+searchUI.style.marginTop = "0%";
 
 cardsDisplay.innerHTML = 
     `<div class="mobile-table">
@@ -199,6 +203,7 @@ cardsDisplay.innerHTML =
         <p>${foundCard.DetailsUrl}</p>
       </div>
     </div>`;
+    
 }
 
 /*
@@ -232,16 +237,23 @@ function displayShows(shows) {
 // findButton.addEventListener("submit", () => { getData().then(c => cardsDisplay.innerHTML = c.find(fetchFoundCard).Name).catch(e => console.error(e)) } );
 
 searchBar.addEventListener("change", () => { getData().then(c => displayFoundCard(c)).catch(e => console.error(e)) } );
-findButton.addEventListener("submit", () => { getData().then(c => displayFoundCard(c)).catch(e => console.error(e)) } );
+findButton.addEventListener("submit", () => { 
+      getData().then(c => { displayFoundCard(c);}).catch(e => console.error(e)) 
+  }
+);
 
+// moveUp.addEventListener("click", () => { 
+//   // console.log("It should have moved up");
+//   searchUI.style.marginTop = "0%"; 
+// })
 
 // getData().then(c => displayFoundCard(c[0])).catch(e => console.log(e));
 // cardsDisplay.innerHTML = "Whatever 2";
 
 /* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
 function openNav() {
-  document.querySelector(".card-list").style.width = "250px";
-  document.querySelector(".container").style.marginRight = "250px";
+  document.querySelector(".card-list").style.width = "35%";
+  document.querySelector(".container").style.marginRight = "35%";
 }
 
 /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
