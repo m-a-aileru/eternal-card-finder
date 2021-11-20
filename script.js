@@ -1,11 +1,12 @@
 let container = document.querySelector(".container");
 let searchBar = document.querySelector(".search-bar");
 let cardsDisplay = document.querySelector(".cards");
-let findButton = document.querySelector(".find");
+let findButton = document.querySelector(".find-mob");
 let searchUI = document.querySelector(".search-ui");
+// let openList = document.querySelector(".open");
 // let cardList = document.querySelector(".card-list");
 // let dropdown = document.querySelector(".dropdown");
-let moveUp = document.querySelector(".move-up");
+// let moveUp = document.querySelector(".move-up");
 
 // let optionArr = ['Opt. 1', 'Opt. 2', 'Opt. 3', 'Opt. 4']
 
@@ -136,72 +137,74 @@ searchUI.style.marginTop = "0%";
 
 cardsDisplay.innerHTML = 
     `<div class="mobile-table">
-      <div class="heading">
+      <div class="heading name">
         <h4>Name</h4>
       </div>
-      <div class="card-data">
+      <div class="card-data name">
         <p>${foundCard.Name}</p>
       </div>
-      <div class="heading">
+      <div class="heading image">
         <h4>Card Image</h4>
       </div>
-      <div class="card-data">
+      <div class="card-data image">
         <img src=${foundCard.ImageUrl} alt="Image of ${foundCard.Name}" width="200px" height="300px" />
       </div>
-      <div class="heading">
+      <div class="heading info-heading">
          <h4>Card Cost</h4> 
       </div>
-      <div class="card-data">
+      <div class="card-data info">
          <p>${foundCard.Cost}</p>
       </div>
-      <div class="heading">
+      <div class="heading info-heading">
          <h4>Influence</h4> 
       </div>
-      <div class="card-data">
+      <div class="card-data info">
         <p>${foundCard.Influence}</p>
       </div>
-      <div class="heading">
+      <div class="heading info-heading">
         <h4>Attack</h4> 
       </div>
-      <div class="card-data">
+      <div class="card-data info">
         <p>${foundCard.Attack}</p>
       </div>
-      <div class="heading">
+      <div class="heading info-heading">
          <h4>Health</h4> 
       </div>
-      <div class="card-data">
+      <div class="card-data info">
         <p>${foundCard.Health}</p>
       </div>
-      <div class="heading">
+      <div class="heading info-heading">
          <h4>Rarity</h4> 
       </div>
-      <div class="card-data">
+      <div class="card-data info">
         <p>${foundCard.Rarity}</p>
       </div>
-      <div class="heading">
+      <div class="heading info-heading">
          <h4>Type</h4> 
       </div>
-      <div class="card-data">
+      <div class="card-data info">
         <p>${foundCard.Type}</p>
       </div>
-      <div class="heading">
+      <div class="heading info-heading">
         <h4>Unit Type</h4> 
       </div>
-      <div class="card-data">
+      <div class="card-data info">
         <p>${foundCard.UnitType}</p>
       </div>
-      <div class="heading">
+      <div class="heading info-heading">
         <h4>Deck Buildable?</h4> 
       </div>
-      <div class="card-data">
+      <div class="card-data info">
         <p>${foundCard.DeckBuildable}</p>
       </div>
+      <!--
       <div class="heading">
         <h4>More Details</h4> 
       </div>
       <div class="card-data">
         <p>${foundCard.DetailsUrl}</p>
       </div>
+      -->
     </div>`;
     
 }
@@ -236,11 +239,7 @@ function displayShows(shows) {
 // searchBar.addEventListener("change", () => { getData().then(c => cardsDisplay.innerHTML = c.find(fetchFoundCard).Name).catch(e => console.log(e)) } );
 // findButton.addEventListener("submit", () => { getData().then(c => cardsDisplay.innerHTML = c.find(fetchFoundCard).Name).catch(e => console.error(e)) } );
 
-searchBar.addEventListener("change", () => { getData().then(c => displayFoundCard(c)).catch(e => console.error(e)) } );
-findButton.addEventListener("submit", () => { 
-      getData().then(c => { displayFoundCard(c);}).catch(e => console.error(e)) 
-  }
-);
+
 
 // moveUp.addEventListener("click", () => { 
 //   // console.log("It should have moved up");
@@ -276,6 +275,12 @@ function generateCardList(cards) {
   }
 }
 
+// openList.addEventListener("click", () => { console.log("List should be opened")});
+searchBar.addEventListener("change", () => { getData().then(c => displayFoundCard(c)).catch(e => console.error(e)) } );
+findButton.addEventListener("click", () => { 
+      getData().then(c => { displayFoundCard(c);}).catch(e => console.error(e)) 
+  }
+);
 
 
 getData().then(data => generateCardList(data))
