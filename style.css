@@ -16,10 +16,11 @@
 
 .search-ui {
     width: 100%;
-    display: flex;
+    /* display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    align-items: space-between;
+    align-items: space-between; */
+    display: grid;
     margin-top: 15%;
     padding: 0.25rem;
 }
@@ -34,21 +35,26 @@
 
 }
 
-.find {
-    width: 75%;
-    font-size: 5vmin;
-    margin: auto;
-    margin-bottom: 1.25rem;
-    padding: 0.25em;
-}
-
-button.open {
+button.open-mob {
     /* margin-left: 25%; */
     width: 35%;
     font-size: 3.5vmin;
     margin: auto;
     padding: 0.25em;
 }
+
+button.find-mob {
+    width: 75%;
+    font-size: 5vmin;
+    margin: auto;
+    margin-bottom: 1.25rem;
+    padding: 0.25em;
+}
+ 
+button.open, button.find  {
+    display: none;
+}
+
 
 .cards {
     /* width: 80%; */
@@ -159,7 +165,7 @@ table img {
 Time - Yellow
 Primal - Blue
 ??? - Purple
-??? - Green
+Justice - Green
 
 */
 
@@ -174,18 +180,187 @@ Primal - Blue
  }
  
  /* Medium devices (landscape tablets, 768px and up) */
- @media only screen and (min-width: 768px) {
-    button.find {
+ @media only screen and (min-width: 768px) and (orientation: landscape) {
+    body {
+        background-color: yellow;
+    }
+
+    .search-ui {
+        /* display: flex; */
+        /* flex-direction: row; */
+        grid-template-columns: 8% 72% 8%;
+        grid-template-rows: 25%;
+        /* grid-column-gap: 0; */
+        justify-content: center;
+    }
+    
+    button.find-mob {
         display: none;
     }
     
-    button.open {
+    button.open-mob {
         display: none;
     }
+
+    button.open, button.find  {
+        /* display: inline; */
+        /* display: block; */
+        display: grid;
+        /* justify-items: baseline; */
+        width: 100%;
+        height: 7.35vh;
+    
+        /* height: 4.05em; */
+        /* padding: 1em; */
+    }
+    
+    button.open {
+        border-radius: 25% 0 0 25%;
+    }
+
+    button.find {
+        border-radius: 0 25% 25% 0;
+    }
+
+
+    button.open img, button.find img {
+        display: grid;
+        /* justify-self: center;
+        align-self: center; */
+        /* width: 55%; */
+        width: 2.5vw;
+        /*height: 4.5vh;  */
+        /* width: 30px;    leave it at a fixed value for now until I know what I'm doing with svg's */
+        /* width: 30px; */
+        height: auto;
+        margin: auto;
+        /* padding: 0.25em 0; */
+        
+    }
+
+    .search-bar {
+        /* width: 100%; */
+        height: 5.5vh;
+        /* height: 1em; */
+        font-size: 4.65vmin;
+        padding: 0.75em;
+        border: 1px solid black;
+    }
  }
+
+/* Medium devices (portrait tablets, 768px and up) */
+@media only screen and (min-width: 768px) and (orientation: portrait) {
+    body {
+        background-color: aquamarine;
+    }
+
+    .search-ui {
+        /* display: block; */
+        /* display: grid; */
+        grid-template-columns: 6% 73% 6%;
+        grid-template-rows: 25%;
+        
+        justify-content: center;
+    }
+
+    button.find-mob {
+        display: none;
+    }
+    
+    button.open-mob {
+        display: none;
+    }
+
+    button.open, button.find  {
+        display: grid;
+        height: 5.5vh;
+        width: 6vw;
+    }
+
+    button.open {
+        border-radius: 25% 0 0 25%;
+    }
+
+    button.find {
+        border-radius: 0 25% 25% 0;
+    }
+
+    button.open img, button.find img {
+        /* display: grid; */
+        width: 3vw;      
+        margin: auto; 
+        background-size: contain;    
+    }
+
+    .search-bar {
+        height: 5.5vh; 
+        font-size: 4vmin;
+        /* height: 100%; */
+    }
+}
+ 
  
  /* Large devices (laptops/desktops, 992px and up) */
- @media only screen and (min-width: 992px) {}
+ @media only screen and (min-width: 992px) and (orientation: landscape) {
+     body {
+         background-color: orange;
+     }
+
+     button.find, button.open  {
+        /* display: inline; */
+        /* display: block; */
+        /* display: grid; */
+        /* justify-items: baseline; */
+        /* width: 100px; */
+        height: 5.5vh;
+        /* height: 4.05em; */
+        /* padding: 1em; */
+    }
+
+    button.open {
+        border-radius: 10% 0 0 10%;
+    }
+
+    button.find {
+        border-radius: 0 10% 10% 0;
+    }
+
+    button.open img, button.find img {
+        /* display: grid; */
+        width: 2vw;      
+        /* margin: auto; 
+        background-size: contain;     */
+    }
+
+    .search-bar {
+        /* height: 5.5vh;  */
+        font-size: 3vmin;
+        /* height: 100%; */
+    }
+
+    .mobile-table {
+        grid-template-areas: 
+        'name info-heading info'
+        'name info-heading info'
+        'image info-heading info'
+        'image info-heading info'
+        'image info-heading info'
+        'image info-heading info'
+        'image info-heading info'
+        'image info-heading info'
+        ;
+    }
+
+    .name { grid-area: name; }
+    .image { grid-area: image; }
+    .info-heading { grid-area: info-heading; }
+    .info { grid-area: info; }
+}
+ 
+
+ @media only screen and (min-width: 992px) and (orientation: portrait) {
+
+ }
  
  /* Extra large devices (large laptops and desktops, 1200px and up) */
  @media only screen and (min-width: 1200px) {}
