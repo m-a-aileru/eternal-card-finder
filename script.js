@@ -137,64 +137,64 @@ searchUI.style.marginTop = "0%";
 
 cardsDisplay.innerHTML = 
     `<div class="mobile-table">
-      <div class="heading name">
+      <div class="heading name-heading">
         <h4>Name</h4>
       </div>
-      <div class="card-data name">
+      <div class="card-data name-value">
         <p>${foundCard.Name}</p>
       </div>
-      <div class="heading image">
+      <div class="heading image-heading">
         <h4>Card Image</h4>
       </div>
-      <div class="card-data image">
+      <div class="card-data image-value">
         <img src=${foundCard.ImageUrl} alt="Image of ${foundCard.Name}" width="200px" height="300px" />
       </div>
-      <div class="heading info-heading">
+      <div class="heading">
          <h4>Card Cost</h4> 
       </div>
-      <div class="card-data info">
+      <div class="card-data">
          <p>${foundCard.Cost}</p>
       </div>
-      <div class="heading info-heading">
+      <div class="heading">
          <h4>Influence</h4> 
       </div>
-      <div class="card-data info">
+      <div class="card-data">
         <p>${foundCard.Influence}</p>
       </div>
-      <div class="heading info-heading">
+      <div class="heading">
         <h4>Attack</h4> 
       </div>
-      <div class="card-data info">
+      <div class="card-data">
         <p>${foundCard.Attack}</p>
       </div>
-      <div class="heading info-heading">
-         <h4>Health</h4> 
+      <div class="heading">
+        <h4>Health</h4> 
       </div>
-      <div class="card-data info">
+      <div class="card-data">
         <p>${foundCard.Health}</p>
       </div>
-      <div class="heading info-heading">
+      <div class="heading">
          <h4>Rarity</h4> 
       </div>
-      <div class="card-data info">
+      <div class="card-data">
         <p>${foundCard.Rarity}</p>
       </div>
-      <div class="heading info-heading">
+      <div class="heading">
          <h4>Type</h4> 
       </div>
-      <div class="card-data info">
+      <div class="card-data">
         <p>${foundCard.Type}</p>
       </div>
-      <div class="heading info-heading">
+      <div class="heading">
         <h4>Unit Type</h4> 
       </div>
-      <div class="card-data info">
+      <div class="card-data">
         <p>${foundCard.UnitType}</p>
       </div>
-      <div class="heading info-heading">
+      <div class="heading">
         <h4>Deck Buildable?</h4> 
       </div>
-      <div class="card-data info">
+      <div class="card-data">
         <p>${foundCard.DeckBuildable}</p>
       </div>
       <!--
