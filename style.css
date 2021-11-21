@@ -4,7 +4,7 @@
     padding: 0;
 }
 
-.container {
+.main-container {
     width: 100%;
     /* display: flex;
     flex-direction: column; */
@@ -246,14 +246,45 @@ Justice - Green
         padding: 0.75em;
         border: 1px solid black;
     }
- }
+
+    .mobile-table {
+        grid-template-columns: auto auto;
+        /* grid-template-rows: auto auto auto auto auto auto auto auto; */
+    }
+
+    .mobile-table div {
+        border: 1px solid black;
+    }
+
+    .name-heading { grid-row: 1 / 2; }
+    .name-value { grid-row: 2 / span 3; }
+    .image-heading { grid-row: 5 / 6; }
+    .image-value { grid-row: 6 / span 3; }
+    /* .cc-heading {}
+    .cc-value {}
+    .influence-heading {}
+    .influence-value {}
+    .attack-heading {}
+    .attack-value { grid-row: 7 / 8; }
+    .health-heading {}
+    .health-value {}
+    .rarity-heading {}
+    .rarity-value {}
+    .type-heading {}
+    .type-value {}
+    .ut-heading {}
+    .ut-value {}
+    .db-heading {}
+    .db-value {}
+ } */
+}
 
 /* Medium devices (portrait tablets, 768px and up) */
 @media only screen and (min-width: 768px) and (orientation: portrait) {
     body {
-        background-color: aquamarine;
+        background-color: blue;
     }
-
+ 
     .search-ui {
         /* display: block; */
         /* display: grid; */
@@ -271,7 +302,7 @@ Justice - Green
         display: none;
     }
 
-    button.open, button.find  {
+    button.open, button.find {
         display: grid;
         height: 5.5vh;
         width: 6vw;
@@ -297,13 +328,18 @@ Justice - Green
         font-size: 4vmin;
         /* height: 100%; */
     }
+
+    .mobile-table {
+        grid-template-columns: auto auto;
+        /* grid-template-rows: auto auto auto auto auto auto auto auto; */
+    }
 }
  
  
  /* Large devices (laptops/desktops, 992px and up) */
  @media only screen and (min-width: 992px) and (orientation: landscape) {
      body {
-         background-color: orange;
+        background-color: orange;
      }
 
      button.find, button.open  {
@@ -339,28 +375,46 @@ Justice - Green
     }
 
     .mobile-table {
-        grid-template-areas: 
-        'name info-heading info'
-        'name info-heading info'
-        'image info-heading info'
-        'image info-heading info'
-        'image info-heading info'
-        'image info-heading info'
-        'image info-heading info'
-        'image info-heading info'
-        ;
+        grid-template-columns: auto auto auto;
+        /* grid-template-rows: auto auto auto auto auto auto auto auto; */
     }
 
+    .name-heading { grid-row: 1 / 2; }
+    .name-value { grid-row: 2 / 5; }
+    .image-heading { grid-row: 5 / 6; }
+    .image-value { grid-row: 6 / 9; }
+    /* .cc-heading {}
+    .cc-value {}
+    .influence-heading {}
+    .influence-value {}
+    .attack-heading {}
+    .attack-value {}
+    .health-heading {}
+    .health-value {}
+    .rarity-heading {}
+    .rarity-value {}
+    .type-heading {}
+    .type-value {}
+    .ut-heading {}
+    .ut-value {}
+    .db-heading {}
+    .db-value {} */
+
+
+    
+/* 
     .name { grid-area: name; }
     .image { grid-area: image; }
     .info-heading { grid-area: info-heading; }
     .info { grid-area: info; }
+} */
 }
- 
 
  @media only screen and (min-width: 992px) and (orientation: portrait) {
 
  }
  
  /* Extra large devices (large laptops and desktops, 1200px and up) */
- @media only screen and (min-width: 1200px) {}
+ @media only screen and (min-width: 1200px) {
+
+ }
