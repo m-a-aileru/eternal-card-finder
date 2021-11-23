@@ -4,6 +4,12 @@
     padding: 0;
 }
 
+body {
+    background-image: url('images/eternal-throne-mobile.jpg');
+    background-size: cover;
+    /* background-repeat: no-repeat; */
+}
+
 .main-container {
     width: 100%;
     /* display: flex;
@@ -82,11 +88,14 @@ button.open, button.find  {
     position: fixed; /* Stay in place */
     z-index: 1; /* Stay on top */
     top: 0;
-    right: 0;
+    left: 0;
     background-color: #111; 
+    text-align: center;
   overflow-x: hidden;
   padding-top: 60px; /* Place content 60px from the top */
   transition: 0.5s;
+  /* padding: 0 1rem; */
+  
 }
 
 .card-list .closebtn {
@@ -104,6 +113,16 @@ button.open, button.find  {
     background-color: #404040;
     padding: 2px;
   }
+
+.card-list h2 {
+    margin-bottom: 1.5rem;
+    font-size: 6.5vmin;
+    
+}  
+
+.card-list p {
+    font-size: 3.85vmin;
+}
 
 .card-name {
     font-size: 1.25rem;
@@ -171,6 +190,8 @@ Justice - Green
 
 /* BREAKPOINTS */
 
+@media only screen and (orientation: landscape) {}
+
  /* Extra small devices (phones, 600px and down) */
  @media only screen and (max-width: 600px) {}
 
@@ -183,6 +204,17 @@ Justice - Green
  @media only screen and (min-width: 768px) and (orientation: landscape) {
     body {
         background-color: yellow;
+        background: url('images/eternal-throne-pc1.jpg');
+    }
+    
+    .card-list h2 {
+        margin-bottom: 1rem;
+        font-size: 6vmin;
+        
+    }  
+    
+    .card-list p {
+        font-size: 3.75vmin;
     }
 
     .search-ui {
@@ -283,6 +315,17 @@ Justice - Green
 @media only screen and (min-width: 768px) and (orientation: portrait) {
     body {
         background-color: blue;
+        background: url('images/eternal-throne-tablet.jpg');
+    }
+
+    .card-list h2 {
+        margin-bottom: 1rem;
+        font-size: 4.5vmin;
+        
+    }  
+    
+    .card-list p {
+        font-size: 2.5vmin;
     }
  
     .search-ui {
@@ -340,7 +383,19 @@ Justice - Green
  @media only screen and (min-width: 992px) and (orientation: landscape) {
      body {
         background-color: orange;
+        background-image: url('images/eternal-throne-pc4.jpg');
+        background-size: cover; 
      }
+
+    .card-list h2 {
+        margin-bottom: 2rem;
+        font-size: 3.75vmin;
+        
+    } 
+
+    .card-list p {
+        font-size: 2.15vmin;
+    }
 
      button.find, button.open  {
         /* display: inline; */
@@ -410,9 +465,13 @@ Justice - Green
 } */
 }
 
- @media only screen and (min-width: 992px) and (orientation: portrait) {
-
- }
+@media only screen and (min-width: 992px) and (orientation: portrait) {
+    body {
+       background-color: green;
+        /* background-image: url('images/eternal-throne-tablet.jpg');
+        background-size: 100% 100%;  */
+    }
+}
  
  /* Extra large devices (large laptops and desktops, 1200px and up) */
  @media only screen and (min-width: 1200px) {
