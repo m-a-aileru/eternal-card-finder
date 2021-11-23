@@ -134,131 +134,95 @@ function displayFoundCard(cards) {
 // }
 // console.log("It should have moved up by now.");
 searchUI.style.marginTop = "0%";
+searchUI.style.transition = "margin-top 0.5s";
 
-cardsDisplay.innerHTML = 
-    `<div class="mobile-table">
-      <div class="heading name-heading">
-        <h4>Name</h4>
-      </div>
-      <div class="card-data name-value">
-        <p>${foundCard.Name}</p>
-      </div>
-      <div class="heading image-heading">
-        <h4>Card Image</h4>
-      </div>
-      <div class="card-data image-value">
-        <img src=${foundCard.ImageUrl} alt="Image of ${foundCard.Name}" width="200px" height="300px" />
-      </div>
-      <div class="heading">
-         <h4>Card Cost</h4> 
-      </div>
-      <div class="card-data">
-         <p>${foundCard.Cost}</p>
-      </div>
-      <div class="heading">
-         <h4>Influence</h4> 
-      </div>
-      <div class="card-data">
-        <p>${foundCard.Influence}</p>
-      </div>
-      <div class="heading">
-        <h4>Attack</h4> 
-      </div>
-      <div class="card-data">
-        <p>${foundCard.Attack}</p>
-      </div>
-      <div class="heading">
-        <h4>Health</h4> 
-      </div>
-      <div class="card-data">
-        <p>${foundCard.Health}</p>
-      </div>
-      <div class="heading">
-         <h4>Rarity</h4> 
-      </div>
-      <div class="card-data">
-        <p>${foundCard.Rarity}</p>
-      </div>
-      <div class="heading">
-         <h4>Type</h4> 
-      </div>
-      <div class="card-data">
-        <p>${foundCard.Type}</p>
-      </div>
-      <div class="heading">
-        <h4>Unit Type</h4> 
-      </div>
-      <div class="card-data">
-        <p>${foundCard.UnitType}</p>
-      </div>
-      <div class="heading">
-        <h4>Deck Buildable?</h4> 
-      </div>
-      <div class="card-data">
-        <p>${foundCard.DeckBuildable}</p>
-      </div>
-      <!--
-      <div class="heading">
-        <h4>More Details</h4> 
-      </div>
-      <div class="card-data">
-        <p>${foundCard.DetailsUrl}</p>
-      </div>
-      -->
+
+setTimeout(() => {
+    cardsDisplay.innerHTML = 
+      `<div class="mobile-table">
+        <div class="heading name-heading">
+          <h4>Name</h4>
+        </div>
+        <div class="card-data name-value">
+          <p>${foundCard.Name}</p>
+        </div>
+        <div class="heading image-heading">
+          <h4>Card Image</h4>
+        </div>
+        <div class="card-data image-value">
+          <img src=${foundCard.ImageUrl} alt="Image of ${foundCard.Name}" width="200px" height="300px" />
+        </div>
+        <div class="heading">
+          <h4>Card Cost</h4> 
+        </div>
+        <div class="card-data">
+          <p>${foundCard.Cost}</p>
+        </div>
+        <div class="heading">
+          <h4>Influence</h4> 
+        </div>
+        <div class="card-data">
+          <p>${foundCard.Influence}</p>
+        </div>
+        <div class="heading">
+          <h4>Attack</h4> 
+        </div>
+        <div class="card-data">
+          <p>${foundCard.Attack}</p>
+        </div>
+        <div class="heading">
+          <h4>Health</h4> 
+        </div>
+        <div class="card-data">
+          <p>${foundCard.Health}</p>
+        </div>
+        <div class="heading">
+          <h4>Rarity</h4> 
+        </div>
+        <div class="card-data">
+          <p>${foundCard.Rarity}</p>
+        </div>
+        <div class="heading">
+          <h4>Type</h4> 
+        </div>
+        <div class="card-data">
+          <p>${foundCard.Type}</p>
+        </div>
+        <div class="heading">
+          <h4>Unit Type</h4> 
+        </div>
+        <div class="card-data">
+          <p>${foundCard.UnitType}</p>
+        </div>
+        <div class="heading">
+          <h4>Deck Buildable?</h4> 
+        </div>
+        <div class="card-data">
+          <p>${foundCard.DeckBuildable}</p>
+        </div>
+    <!--
+    <div class="heading">
+      <h4>More Details</h4> 
+    </div>
+    <div class="card-data">
+      <p>${foundCard.DetailsUrl}</p>
+    </div>
+    -->
     </div>`;
-    
+  }, 600);  
 }
 
-/*
-function displayShows(shows) {
-    document.body.innerHTML = `<div class="my-shows">
-        ${shows.map(show => getShowHtml(show.show)).join('')}
-    </div>` 
-}
-*/
-
-// might be needed later, when I want to take the project to the "next level"
-// function getCardHtml2(card) {
-//     return `<div>
-//                 <div class="card-name">${card.Name}</div>
-//                 <div class="card-text">${card.CardText}</div>
-//                 <div class="card-cost">${card.Cost}</div>
-//                 <div class="card-influence">${card.Influence}</div>
-//                 <div class="card-attack">${card.Attack}</div>
-//                 <div class="card-health">${card.Health}</div>
-//                 <div class="card-rarity">${card.Rarity}</div>
-//                 <div class="card-type">${card.Type}</div>
-//                 <div class="card-unit-type">${card.UnitType}</div>
-//                 <div class="card-image">${card.ImageUrl}</div>
-//                 <div class="card-deck-buildable">${card.DeckBuildable}</div>
-//             </div>`
-// }
-
-
-// searchBar.addEventListener("change", () => { getData().then(c => console.log(c.find(fetchFoundCard).Name)).catch(e => console.log(e)) } );
-// searchBar.addEventListener("change", () => { getData().then(c => cardsDisplay.innerHTML = c.find(fetchFoundCard).Name).catch(e => console.log(e)) } );
-// findButton.addEventListener("submit", () => { getData().then(c => cardsDisplay.innerHTML = c.find(fetchFoundCard).Name).catch(e => console.error(e)) } );
-
-
-
-// moveUp.addEventListener("click", () => { 
-//   // console.log("It should have moved up");
-//   searchUI.style.marginTop = "0%"; 
-// })
-
-// getData().then(c => displayFoundCard(c[0])).catch(e => console.log(e));
-// cardsDisplay.innerHTML = "Whatever 2";
 
 /* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
 function openNav() {
   document.querySelector(".card-list").style.width = "35%";
-  document.querySelector(".container").style.marginRight = "35%";
+  document.querySelector(".container").style.marginLeft = "35%";
 }
 
 /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
 function closeNav() {
   document.querySelector(".card-list").style.width = "0";
-  document.querySelector(".container").style.marginRight = "0";
+  document.querySelector(".container").style.marginLeft = "0";
 }
  
 //let randomArr = ["Card One", "Card Two", "Card Three", "Card Four", "Card Five"]; - for demo purposes
@@ -269,7 +233,7 @@ function generateCardList(cards) {
     console.log(cards[c].Name);
     // console.log(c);
     document.querySelector(".card-list").innerHTML += 
-      `<p>${cards[c].Name}</p>`
+      `<p>${cards[c].Name}</p><br>`
     // document.querySelector(".card-list").innerHTML += 
     //   `<p>${c.Name}</p>`
   }
