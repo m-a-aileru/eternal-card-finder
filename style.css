@@ -4,11 +4,12 @@
     padding: 0;
 }
 
-body {
-    background-image: url('images/eternal-throne-mobile.jpg');
+html {
+    background: url('images/eternal-throne-mobile.jpg') no-repeat center center fixed; 
     background-size: cover;
-    /* background-repeat: no-repeat; */
+    /* background-size: 100% 100%;   */
 }
+
 
 .main-container {
     width: 100%;
@@ -202,10 +203,10 @@ Justice - Green
  
  /* Medium devices (landscape tablets, 768px and up) */
  @media only screen and (min-width: 768px) and (orientation: landscape) {
-    body {
+    /* body {
         background-color: yellow;
         background: url('images/eternal-throne-pc1.jpg');
-    }
+    } */
     
     .card-list h2 {
         margin-bottom: 1rem;
@@ -313,10 +314,10 @@ Justice - Green
 
 /* Medium devices (portrait tablets, 768px and up) */
 @media only screen and (min-width: 768px) and (orientation: portrait) {
-    body {
+    /* body {
         background-color: blue;
         background: url('images/eternal-throne-tablet.jpg');
-    }
+    } */
 
     .card-list h2 {
         margin-bottom: 1rem;
@@ -381,11 +382,11 @@ Justice - Green
  
  /* Large devices (laptops/desktops, 992px and up) */
  @media only screen and (min-width: 992px) and (orientation: landscape) {
-     body {
+     /* body {
         background-color: orange;
         background-image: url('images/eternal-throne-pc4.jpg');
         background-size: cover; 
-     }
+     } */
 
     .card-list h2 {
         margin-bottom: 2rem;
@@ -466,11 +467,11 @@ Justice - Green
 }
 
 @media only screen and (min-width: 992px) and (orientation: portrait) {
-    body {
+    /* body {
        background-color: green;
         /* background-image: url('images/eternal-throne-tablet.jpg');
         background-size: 100% 100%;  */
-    }
+    } */
 }
  
  /* Extra large devices (large laptops and desktops, 1200px and up) */
