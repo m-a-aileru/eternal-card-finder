@@ -191,7 +191,13 @@ Justice - Green
 
 /* BREAKPOINTS */
 
-@media only screen and (orientation: landscape) {}
+@media only screen and (orientation: landscape) {
+    html {
+        background: url('images/eternal-throne-pc2.jpg') no-repeat center center fixed; 
+        background-size: cover;
+        /* background-size: 100% 100%;   */
+    }
+}
 
  /* Extra small devices (phones, 600px and down) */
  @media only screen and (max-width: 600px) {}
