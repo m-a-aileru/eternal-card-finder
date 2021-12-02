@@ -1,3 +1,4 @@
+/* Default (mobile-first) layout */
 @font-face {
     font-family: Lino;
     src: url(fonts/linux-biolinum/LinBiolinum_R.otf);
@@ -20,23 +21,25 @@ body {
     font-family: Lino, Verdana, Tahoma, sans-serif;
 }
 
-
 .main-container {
     width: 100%;
-    /* display: flex;
-    flex-direction: column; */
     display: grid;
     transition: margin-left .5s;
-    /* padding: 0.1rem; */
     margin: auto;
+}
+
+.headlines {
+    color: black;
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.headlines p {
+    padding: 2rem;
 }
 
 .search-ui {
     width: 100%;
-    /* display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: space-between; */
     display: grid;
     margin-top: 15%;
     padding: 0.25rem;
@@ -58,11 +61,6 @@ body {
     color: #B8B8B8;
 }
 
-/* input.search-bar ::placeholder {
-    color: white;
-    font-size: 3em;
-} */
-
 button.open-mob, button.find-mob {
     font-family: Lino, Verdana, Tahoma, sans-serif;
     margin: auto;
@@ -74,19 +72,13 @@ button.open-mob, button.find-mob {
     border-radius: 25%;
     transition: background-color 0.5s;
 }
-
 button.open-mob:hover, button.find-mob:hover {
-    
     background-color: rgba(0.0, 0.0, 0.0, 0.7);
-    
 }
-
 button.open-mob {
-    /* margin-left: 25%; */
     width: 35%;
     font-size: 3.5vmin;
 }
-
 button.find-mob {
     width: 75%;
     font-size: 5vmin;
@@ -97,43 +89,26 @@ button.open, button.find  {
     display: none;
 }
 
-
 .cards {
-    /* width: 80%; */
     background: #bfbfbf;
     color: white;
-    /* display: none; */
-    /* display: grid;
-    grid-template-columns: auto auto auto auto auto;
-    grid-gap: 1rem;
-    justify-items: center; */
     margin-top: 3rem;
 }
 
-.card {
-    /* background: #FF9671; */
-    /* justify-self: center; */
-    /* display: none; */
-}
-
 .card-list {
-    /* border: 1px solid black; */
-    color: white;
     width: 0;
     height: 100%;
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Stay on top */
+    position: fixed; 
     top: 0;
     left: 0;
-    background-color: rgba(0.0, 0.0, 0.0, 0.8);
+    padding-top: 60px; 
     text-align: center;
-  overflow-x: hidden;
-  padding-top: 60px; /* Place content 60px from the top */
-  transition: 0.5s;
-  /* padding: 0 1rem; */
-  
+    background-color: rgba(0.0, 0.0, 0.0, 0.8);
+    color: white;
+    z-index: 1; 
+    overflow-x: hidden;
+    transition: 0.5s;
 }
-
 .card-list .closebtn {
     position: absolute;
     top: 0;
@@ -144,25 +119,20 @@ button.open, button.find  {
     color: white;
     padding: 2px;
 }
-
 .card-list .closebtn:hover {
     background-color: #404040;
     padding: 2px;
-  }
-
+}
 .card-list h2 {
     margin-bottom: 1.5rem;
-    font-size: 6.5vmin;
-    
+    font-size: 6.5vmin;   
 }  
-
 .card-list p {
     font-size: 3.85vmin;
     /* background-color: rgba(191, 191, 191, 0.5); */
     color: silver;
     transition: color 0.5s;
 }
-
 .card-list p:hover {
     background-color: rgba(191, 191, 191, 0.5);
     color: white;
@@ -174,29 +144,24 @@ button.open, button.find  {
     text-align: center;
 }
  
-.cell {
-    border: 1px solid black;
-}
-
-/* table {
-    border: 2px solid black;
-    
-} */
-
 .mobile-table {
     display: grid;
-    text-align: center;
+    text-align: center;    
+}
+
+.mobile-table div.heading, .mobile-table div.card-data {
+    border: none;
 }
 
 .heading, .card-data {
     padding: 0.5em 0;
+    
 }
-
 .heading {
     background-color: rgb(64, 64, 64);
+    /* background-color: rgba(64, 64, 64, 0.5); */
     font-size: 1.5em;
 }
-
 .card-data {
     color: black;
     font-size: 1.5em;
@@ -228,7 +193,7 @@ table img {
 
 Time - Yellow
 Primal - Blue
-??? - Purple
+Shadow - Purple
 Justice - Green
 
 */
@@ -240,15 +205,7 @@ Justice - Green
     html {
         background: url('images/eternal-throne-pc2.jpg') no-repeat center center fixed; 
         background-size: cover;
-        /* background-size: 100% 100%;   */
-    }
-
-    /* button.open-mob, button.find-mob { */
-        /* background-color: rgba(31, 31, 31, 0.6); */
-        /* color: #BEBEBE; */
-        /* border: 1px solid silver; */
-        
-    /* } */
+    }   
 } 
 
  /* Extra small devices (phones, 600px and down) */
@@ -259,92 +216,60 @@ Justice - Green
  
  /* Medium devices (landscape tablets, 768px and up) */
  @media only screen and (min-width: 768px) and (orientation: landscape) {
-    /* body {
-        background-color: yellow;
-        background: url('images/eternal-throne-pc1.jpg');
-    } */
-    
     .card-list h2 {
         margin-bottom: 1rem;
         font-size: 6vmin;
         
     }  
-    
     .card-list p {
         font-size: 3.75vmin;
     }
 
     .search-ui {
-        /* display: flex; */
-        /* flex-direction: row; */
         grid-template-columns: 8% 72% 8%;
         grid-template-rows: 25%;
-        /* grid-column-gap: 0; */
         justify-content: center;
     }
     
     button.find-mob {
         display: none;
     }
-    
     button.open-mob {
         display: none;
     }
-
     button.open, button.find  {
-        /* display: inline; */
-        /* display: block; */
         display: grid;
-        /* justify-items: baseline; */
         width: 100%;
         height: 7.35vh;
         background-color: rgba(191, 191, 191, 0.2);
         color: white;
-        /* height: 4.05em; */
-        /* padding: 1em; */
         border: 1px solid white;
         transition: background-color 0.5s;
     }
-
     button.open:hover, button.find:hover  {
         
         background-color: rgba(191, 191, 191, 0.5);
         
     }
-    
     button.open {
         border-radius: 25% 0 0 25%;
     }
-
     button.find {
         border-radius: 0 25% 25% 0;
     }
-
-
     button.open img, button.find img {
         display: grid;
-        /* justify-self: center;
-        align-self: center; */
-        /* width: 55%; */
         width: 2.5vw;
-        /*height: 4.5vh;  */
-        /* width: 30px;    leave it at a fixed value for now until I know what I'm doing with svg's */
-        /* width: 30px; */
         height: auto;
         margin: auto;
-        /* padding: 0.25em 0; */
-        
     }
 
     .search-bar {
-        /* width: 100%; */
         height: 5.5vh;
-        /* height: 1em; */
         font-size: 4.65vmin;
         padding: 0.75em;
         border: 1px solid white;
         background-color: rgba(0.0, 0.0, 0.0, 0.6);
-        /* background-color: rgba(255, 255, 255, 0.5); */
     }
 
     ::placeholder {
@@ -353,10 +278,8 @@ Justice - Green
 
     .mobile-table {
         grid-template-columns: auto auto;
-        /* grid-template-rows: auto auto auto auto auto auto auto auto; */
     }
-
-    .mobile-table div {
+    .mobile-table div.heading, .mobile-table div.card-data {
         border: 1px solid black;
     }
 
@@ -387,8 +310,6 @@ Justice - Green
 @media only screen and (min-width: 768px) and (orientation: portrait) {
     html {
         background: url('images/eternal-throne-tablet.jpg') no-repeat center center fixed; 
-        /* background-size: cover; */
-        /* background-size: 100% 100%;   */
     }
 
     .card-list h2 {
@@ -396,56 +317,41 @@ Justice - Green
         font-size: 4.5vmin;
         
     }  
-    
     .card-list p {
         font-size: 2.5vmin;
     }
  
     .search-ui {
-        /* display: block; */
-        /* display: grid; */
         grid-template-columns: 6% 73% 6%;
         grid-template-rows: 25%;
-        
         justify-content: center;
     }
 
-    button.find-mob {
-        display: none;
-    }
-    
     button.open-mob {
         display: none;
     }
-
+    button.find-mob {
+        display: none;
+    }
     button.open, button.find {
         display: grid;
         height: 5.5vh;
         width: 6vw;
         background-color: rgba(191, 191, 191, 0.4);
         color: white;
-        /* height: 4.05em; */
-        /* padding: 1em; */
         border: 1px solid white;
         transition: background-color 0.5s;
     }
-
-    button.open:hover, button.find:hover  {
-        
+    button.open:hover, button.find:hover  {   
         background-color: rgba(191, 191, 191, 0.8);
-        
     }
-
     button.open {
         border-radius: 25% 0 0 25%;
     }
-
     button.find {
         border-radius: 0 25% 25% 0;
     }
-
     button.open img, button.find img {
-        /* display: grid; */
         width: 3vw;      
         margin: auto; 
         background-size: contain;    
@@ -455,69 +361,52 @@ Justice - Green
         height: 5.5vh; 
         font-size: 4vmin;
         background-color: rgba(0.0, 0.0, 0.0, 0.9);
-        /* height: 100%; */
     }
 
     .mobile-table {
         grid-template-columns: auto auto;
-        /* grid-template-rows: auto auto auto auto auto auto auto auto; */
+    }
+    .mobile-table div.heading {
+        border: 1px solid #BFBFBF;
+    }
+    .mobile-table div.card-data {
+        border: 1px solid #404040;
     }
 }
  
  
- /* Large devices (laptops/desktops, 992px and up) */
+ /* Large devices (laptops/desktops, 992px and up in landscape) */
  @media only screen and (min-width: 992px) and (orientation: landscape) {
-     /* body {
-        background-color: orange;
-        background-image: url('images/eternal-throne-pc4.jpg');
-        background-size: cover; 
-     } */
-
     .card-list h2 {
         margin-bottom: 2rem;
         font-size: 3.75vmin;
-        
     } 
-
     .card-list p {
         font-size: 2.15vmin;
     }
 
-     button.find, button.open  {
-        /* display: inline; */
-        /* display: block; */
-        /* display: grid; */
-        /* justify-items: baseline; */
-        /* width: 100px; */
+    button.open, button.find {    
         height: 5.5vh;
-        /* height: 4.05em; */
-        /* padding: 1em; */
     }
-
     button.open {
         border-radius: 10% 0 0 10%;
     }
-
     button.find {
         border-radius: 0 10% 10% 0;
     }
-
     button.open img, button.find img {
-        /* display: grid; */
         width: 2vw;      
-        /* margin: auto; 
-        background-size: contain;     */
     }
 
     .search-bar {
-        /* height: 5.5vh;  */
         font-size: 3vmin;
-        /* height: 100%; */
     }
 
     .mobile-table {
         grid-template-columns: auto auto auto;
-        /* grid-template-rows: auto auto auto auto auto auto auto auto; */
+    }
+    .mobile-table div.heading, .mobile-table div.card-data {
+        border: 1px solid grey;
     }
 
     .name-heading { grid-row: 1 / 2; }
@@ -540,10 +429,7 @@ Justice - Green
     .ut-value {}
     .db-heading {}
     .db-value {} */
-
-
-    
-/* 
+    /* 
     .name { grid-area: name; }
     .image { grid-area: image; }
     .info-heading { grid-area: info-heading; }
@@ -551,15 +437,8 @@ Justice - Green
 } */
 }
 
-@media only screen and (min-width: 992px) and (orientation: portrait) {
-    /* body {
-       background-color: green;
-        /* background-image: url('images/eternal-throne-tablet.jpg');
-        background-size: 100% 100%;  */
-    } */
-}
+/* Large devices (laptops/desktops, 992px and up in portrait) */
+@media only screen and (min-width: 992px) and (orientation: portrait) {}
  
  /* Extra large devices (large laptops and desktops, 1200px and up) */
- @media only screen and (min-width: 1200px) {
-
- }
+ @media only screen and (min-width: 1200px) {}
